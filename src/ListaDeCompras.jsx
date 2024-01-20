@@ -19,11 +19,18 @@ function ListaDeCompras(){
                 
                 <Item />
                 <Item />
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+                <Item />
+   
 
 
             </div>
             
-            <div className="footer">
+            <div className="footerTotal">
                 <span className="quantidade">Quantidade: 36</span>
                 <div className="divSubtotal">
                     <span className="subtotal">Subtotal:</span>
