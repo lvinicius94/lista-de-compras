@@ -27,11 +27,15 @@ function ListaDeCompras(){
                 <Item />
 
             </div>
-            <span className="quantidade">Quantidade: 36</span>
-            <div className="divSubtotal">
-                <span className="subtotal">Subtotal:</span>
-                <span className="valorSubtotal">R$ 2.070,36</span>
+            
+            <div className="footer">
+                <span className="quantidade">Quantidade: 36</span>
+                <div className="divSubtotal">
+                    <span className="subtotal">Subtotal:</span>
+                    <span className="valorSubtotal">R$ 2.070,36</span>
+                </div>
             </div>
+                
         </div>
 
     )
