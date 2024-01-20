@@ -13,9 +13,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 100vh;
     margin: 0 5px;
-    align-content: space-around;
+    align-content: flex-start;
 }
 
 .topo{
@@ -127,17 +126,18 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 50px;
+    height: 25px;
     background: none;
     color: #555;
     font-size: 16px;
-    font-weight: bold;
-    align-items: center;
+    font-weight: bold;  
 }
 
 .footerTotal{
     display: flex;
     flex-wrap: wrap;
+    position: fixed;
+    bottom: 10px;
     width: 100%;
 }
 
