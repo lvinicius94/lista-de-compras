@@ -19,12 +19,7 @@ function ListaDeCompras(){
                 
                 <Item />
                 <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+
 
             </div>
             
