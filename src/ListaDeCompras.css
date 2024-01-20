@@ -11,11 +11,12 @@
 .bordaPrincipal{
     /* border: 1px solid #333; */
     width: 330px;
-    margin: 30px;
+    margin: 0 5px;
 }
 
 .bordaPrincipal h1{
     font-size: 22px;
+    margin: 0;
 }
 
 .formProdutos{
