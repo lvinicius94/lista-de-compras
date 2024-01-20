@@ -7,6 +7,7 @@ function ListaDeCompras(){
 
     return (
         <div className="bordaPrincipal">
+            <div className="topo">
             <h1>Minha Lista de Compras de Dezembro</h1>
             <form className="formProdutos">
                 <input type="text" 
@@ -14,6 +15,9 @@ function ListaDeCompras(){
                 />
                 <button className="botaoAdicionar" type="submit">+</button>
             </form>
+
+            </div>
+            
             
             <div className="listaProdutos">
                 

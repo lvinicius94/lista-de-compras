@@ -13,16 +13,22 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 100vh;
     margin: 0 5px;
     align-content: flex-start;
 }
 
-.bordaPrincipal h1{
+.topo{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.topo h1{
     display: flex;
     font-size: 22px;
     height: 60px;
     margin: 0;
+    align-items: center;
 }
 
 .formProdutos{
