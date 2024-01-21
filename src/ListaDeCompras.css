@@ -12,7 +12,6 @@
     /* border: 1px solid #333; */
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     margin: 0 5px;
     align-content: flex-start;
 }
@@ -58,6 +57,7 @@
     width: 20%;
     max-width: 50px;
     padding: 0;
+    margin-right: 20px;
     font-weight: bold;
     border-radius: 45px;
     align-items: center;
@@ -138,6 +138,7 @@
     flex-wrap: wrap;
     position: fixed;
     bottom: 10px;
+    left: 0;
     width: 100%;
 }
 
