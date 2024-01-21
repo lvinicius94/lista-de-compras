@@ -142,5 +142,8 @@
     display: flex;
     width: 30px;
     background: none;
-    height: fit-content;
+    height: -moz-fit-content; /* para Firefox */
+  height: -webkit-fit-content; /* para Chrome e Safari */
+  height: fit-content; /* padrão para navegadores modernos */
+  
 }
