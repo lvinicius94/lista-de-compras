@@ -23,7 +23,7 @@
 .nomeItem{
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 22px;
     height: 42px;
     font-weight: bold;
     color: #555;
@@ -42,6 +42,8 @@
     font-weight: bold;
     color: #FF644F;
     background: none;
+
+    
 }
 
 .quantidadeItem{

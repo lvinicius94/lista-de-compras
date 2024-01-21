@@ -33,11 +33,12 @@
     border: none;
     font-weight: 900;
     width: 100%;
+    resize: none;
   }
 
 .topo .Titulo{
     display: flex;
-    font-size: 22px;
+    font-size: 26px;
     height: 60px;
     margin: 0;
     margin-bottom: 10px;
@@ -60,7 +61,7 @@
     height: 50px;
     padding: 0 20px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 22px;
 }
 
 .botaoAdicionar{

@@ -47,7 +47,16 @@ function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, primeir
 
             <div className="nomePreco">
                 <span onClick={onClick} className="nomeItem">{textoproduto}<img className="statusIcon" src={imagemIcone} alt="Produto não selecionado" /></span>
-                <input className="precoItem" type="text" value={preco} onChange={handleChange} />
+                
+                <input 
+                className="precoItem" 
+                type="text" 
+                value={preco} 
+                onChange={handleChange} 
+                pattern="[0-9]*"
+                inputMode="numeric"
+                />
+
             </div>
 
             <div className="quantidadeItem">

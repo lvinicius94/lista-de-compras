@@ -28,7 +28,7 @@ function ListaDeCompras(){
     const [lista, setLista] = useState(listaArmazenada ? JSON.parse(listaArmazenada) : []);
     const [novoItem, setNovoItem] = useState("");
 
-    const [nomeDaLista, setnomeDaLista] = useState("Minha Lista de Compras");
+
 
 
     useEffect(()=>{
@@ -94,7 +94,7 @@ function ListaDeCompras(){
                 value={novoItem}
                 onChange={(e)=>{setNovoItem(e.target.value)}}
 
-                    placeholder="Farinha de Trigo da Marca XY..."
+                    placeholder="Farinha de Trigo..."
                 />
                 <button className="botaoAdicionar" type="submit">+</button>
             </form>
