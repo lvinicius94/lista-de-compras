@@ -1,26 +1,43 @@
 .item{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     background: #f5f5f5;
-    width: 100%;
+    width: 90%;
     height: 70px;
     padding: 10px;
-    margin: 5px 10px 5px 0;
+    margin: 5px 0;
     border-radius: 5px;
+}
+
+
+.nomePreco{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: none;
+    width: 50%;
 }
 
 .nomeItem{
     display: flex;
-    width: 50%;
+    align-items: center;
     font-size: 15px;
+    height: 42px;
     font-weight: bold;
     color: #555;
     background: none;
 }
 
+.nomeItem:hover{
+    cursor: pointer;
+}
+
 .precoItem{
     display: flex;
     width: 50%;
+    border: none;
     font-size: 14px;
     font-weight: bold;
     color: #FF644F;
@@ -29,15 +46,96 @@
 
 .quantidadeItem{
     display: flex;
-    width: 35%;
+    justify-content: center;
+    width: 30%;
+    height: 30px;
+    border: 2px solid #cdcdcd;
+    border-radius: 45px;
+    
+}
 
+.menosItem{
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    font-size: 16px;
+    font-weight: 900;
+    /*background: #FF644F; */
+    border-bottom-left-radius: 45px;
+    border-top-left-radius: 45px;
+}
+
+.menosItem{
+    cursor: pointer;
+}
+
+.valorQuantidade{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-left: 2px solid #cdcdcd;
+    border-right: 2px solid #cdcdcd;
+}
+
+.maisItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 16px;
+    width: 25%;
+    font-weight: 900;
+    /* background: #24cbff; */
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.maisItem{
+    cursor: pointer;
+}
+
+
+.divBotaoRemover{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    background: none;
+    width: 15%;
+    height: 35px;
 }
 
 .botaoRemover{
     display: flex;
+    justify-content: center;
+    width: 100%;
     margin: 0;
     padding: 0;
+    background: none;
     border: none;
-    width: 15%;
-    height: 35px;
+    
+}
+
+.botaoRemover:hover{
+    cursor: pointer;
+}
+
+.removeButton{
+    display: flex;
+    width: 80%;
+    background: none;
+
+}
+
+.divStatusIcon{
+    display: flex;
+    justify-content: space-between;
+}
+
+.statusIcon{
+    display: flex;
+    width: 30px;
+    height: fit-content;
 }
