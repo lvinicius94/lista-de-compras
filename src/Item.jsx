@@ -19,6 +19,7 @@ function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, primeir
 ///////////////////////////////////////////////////
 
 
+
 /////////////////////////////////////////////////////
 
     const [preco, setPreco] = useState('R$ 0,00');

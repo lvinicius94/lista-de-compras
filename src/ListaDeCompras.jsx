@@ -9,10 +9,27 @@ function ListaDeCompras(){
 
     const listaArmazenada = localStorage.getItem('Lista');
 
+    const [Titulo, setTitulo] = useState('Minha Lista de Compras');
+
+    // Carrega o título salvo do Local Storage quando o componente é montado
+    useEffect(() => {
+        const savedTitulo = localStorage.getItem('Titulo');
+        if (savedTitulo) {
+            setTitulo(savedTitulo);
+        }
+    }, []);
+
+    // Salva o título no Local Storage quando ele é alterado
+    useEffect(() => {
+        localStorage.setItem('Titulo', Titulo);
+    }, [Titulo]);
+
+
     const [lista, setLista] = useState(listaArmazenada ? JSON.parse(listaArmazenada) : []);
     const [novoItem, setNovoItem] = useState("");
 
-    
+    const [nomeDaLista, setnomeDaLista] = useState("Minha Lista de Compras");
+
 
     useEffect(()=>{
         localStorage.setItem('Lista', JSON.stringify(lista));        
@@ -60,7 +77,16 @@ function ListaDeCompras(){
     return (
         <div className="bordaPrincipal">
             <div className="topo">
-            <h1>Minha Lista de Compras de Dezembro</h1>
+
+            <input
+                className="Titulo" 
+                type="text" 
+                value={Titulo} 
+                onChange={(e) => setTitulo(e.target.value)} 
+            />
+
+
+
             <form onSubmit={adicionaProduto} className="formProdutos">
                 <input 
                 id="input-entrada"
@@ -81,7 +107,8 @@ function ListaDeCompras(){
                 {
                     lista.length < 1
                     ?
-                    <p>Adicione os produtos para sua lista de compras</p>
+                    <h2>Adicione os produtos para fazer a sua primeira lista de compras!</h2>
+                    /*<p>Adicione os produtos para sua lista de compras</p> */
                     :
                     lista.map((item, index)=>(
                     <Item 

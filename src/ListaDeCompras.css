@@ -27,7 +27,15 @@
     width: 100%;
 }
 
-.topo h1{
+.Titulo {
+    font-size: 3.2em;
+    line-height: 1.1;
+    border: none;
+    font-weight: 900;
+    width: 100%;
+  }
+
+.topo .Titulo{
     display: flex;
     font-size: 22px;
     height: 60px;
@@ -83,6 +91,11 @@
     align-content: flex-start;
 }
 
+.listaProdutos h2{
+    color: #dadada;
+    text-align: center;
+}
+
 /* Estilização para Chrome, Edge, Safari */
 .listaProdutos::-webkit-scrollbar {
     width: 10px;
@@ -103,6 +116,7 @@
     .bordaPrincipal{
         width: 390px;
         margin: 0 auto;
-    }
+    }    
+    
 }
 
