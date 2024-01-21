@@ -35,8 +35,8 @@ function ListaDeCompras(){
         localStorage.setItem('Lista', JSON.stringify(lista));        
     },[lista])
 
-   const vermelho = {background:'#D9EDFF'};
-   const azul = {background:'#f5f5f5'};
+   const marcado = {background:'#D9EDFF', textDecoration:'line-through'};
+   const desmarcado = {background:'#f5f5f5'};
 
     function adicionaProduto(form){
         form.preventDefault();
@@ -46,9 +46,9 @@ function ListaDeCompras(){
 
 
 
-        setLista([...lista,{text: novoItem, foiMarcado: false}])
+        setLista([{text: novoItem, foiMarcado: false}, ...lista])
         setNovoItem("");
-        document.getElementById('input-entrada').focus();
+        /*document.getElementById('input-entrada').focus(); */
     }
 
 
@@ -114,7 +114,7 @@ function ListaDeCompras(){
                     <Item 
                     key={index}
                     imagemIcone = {item.foiMarcado ? YesIcon : NotIcon}
-                    corProduto = {item.foiMarcado ? vermelho : azul}
+                    corProduto = {item.foiMarcado ? marcado : desmarcado}
                     textoproduto ={primeiraMaiuscula(item.text)}
                     onClick={()=>{marcou(index)}}
                     onClickR={()=>{removeu(index)}}
