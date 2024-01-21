@@ -7,8 +7,16 @@ import NotIcon from './assets/notIcon.png'
 
 function ListaDeCompras(){
 
-    const [lista, setLista] = useState([]);
+    const listaArmazenada = localStorage.getItem('Lista');
+
+    const [lista, setLista] = useState(listaArmazenada ? JSON.parse(listaArmazenada) : []);
     const [novoItem, setNovoItem] = useState("");
+
+    
+
+    useEffect(()=>{
+        localStorage.setItem('Lista', JSON.stringify(lista));        
+    },[lista])
 
    const vermelho = {background:'#D9EDFF'};
    const azul = {background:'#f5f5f5'};
@@ -18,16 +26,33 @@ function ListaDeCompras(){
         if(!novoItem){
             return;
         }
+
+
+
         setLista([...lista,{text: novoItem, foiMarcado: false}])
         setNovoItem("");
         document.getElementById('input-entrada').focus();
     }
 
 
+    function primeiraMaiuscula(str) {
+        return str.replace(/\w\S*/g, (txt) => 
+            txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+        );
+    }
+    
+
+
     function marcou(index){
         const listaAux = [...lista];
         listaAux[index].foiMarcado = !listaAux[index].foiMarcado;
 
+        setLista(listaAux);
+    }
+
+    function removeu(index){
+        const listaAux = [...lista];
+        listaAux.splice(index,1);
         setLista(listaAux);
     }
 
@@ -42,6 +67,7 @@ function ListaDeCompras(){
                 type="text" 
                 value={novoItem}
                 onChange={(e)=>{setNovoItem(e.target.value)}}
+
                     placeholder="Farinha de Trigo da Marca XY..."
                 />
                 <button className="botaoAdicionar" type="submit">+</button>
@@ -62,8 +88,9 @@ function ListaDeCompras(){
                     key={index}
                     imagemIcone = {item.foiMarcado ? YesIcon : NotIcon}
                     corProduto = {item.foiMarcado ? vermelho : azul}
-                    textoproduto ={item.text}
+                    textoproduto ={primeiraMaiuscula(item.text)}
                     onClick={()=>{marcou(index)}}
+                    onClickR={()=>{removeu(index)}}
 
                     />))                    
                 }   

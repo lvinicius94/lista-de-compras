@@ -4,7 +4,7 @@ import Icone from './assets/removeIcon.png'
 
 
 
-function Item({textoproduto, imagemIcone, onClick, corProduto}){  
+function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, primeiraMaiuscula}){  
 
     const [quantidadeDinamica, setquantidadeDinamica] = useState(1);
 
@@ -19,6 +19,7 @@ function Item({textoproduto, imagemIcone, onClick, corProduto}){
 ///////////////////////////////////////////////////
 
 
+/////////////////////////////////////////////////////
 
     const [preco, setPreco] = useState('R$ 0,00');
 
@@ -41,11 +42,10 @@ function Item({textoproduto, imagemIcone, onClick, corProduto}){
 
    return (
 
-    <div className="divStatusIcon">
         <div className="item" style={corProduto}  >
 
             <div className="nomePreco">
-                <span onClick={onClick} className="nomeItem">{textoproduto}</span>
+                <span onClick={onClick} className="nomeItem">{textoproduto}<img className="statusIcon" src={imagemIcone} alt="Produto não selecionado" /></span>
                 <input className="precoItem" type="text" value={preco} onChange={handleChange} />
             </div>
 
@@ -56,15 +56,13 @@ function Item({textoproduto, imagemIcone, onClick, corProduto}){
             </div>
 
             <div className="divBotaoRemover">
-                    <button className="botaoRemover"><img className="removeButton" src={Icone} alt="botao que remove produtos" /></button>
+                    <button onClick={onClickR} className="botaoRemover"><img className="removeButton" src={Icone} alt="botao que remove produtos" /></button>
             </div>
     
 
 
         </div>
-        <img className="statusIcon" src={imagemIcone} alt="Produto não selecionado" />    
-
-    </div>
+            
    )
 }
 

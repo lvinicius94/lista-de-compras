@@ -8,6 +8,11 @@
     outline: none;
 }
 
+::selection {
+    background: transparent; /* Faz o fundo da seleção transparente */
+    color: inherit; /* Mantém a cor do texto igual */
+}
+
 .bordaPrincipal{
     /* border: 1px solid #333; */
     display: flex;
@@ -62,6 +67,10 @@
     border-radius: 45px;
     align-items: center;
     justify-content: center;
+}
+
+.botaoAdicionar:hover{
+    cursor: pointer;
 }
 
 .listaProdutos{
