@@ -3,8 +3,8 @@ import './Item.css';
 import Icone from './assets/removeIcon.png'
 
 
+function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR}){  
 
-function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, primeiraMaiuscula}){  
 
     const [quantidadeDinamica, setquantidadeDinamica] = useState(1);
 
@@ -18,7 +18,7 @@ function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, primeir
 
 ///////////////////////////////////////////////////
 
-
+   
 
 /////////////////////////////////////////////////////
 
@@ -63,15 +63,19 @@ function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, primeir
                     <button onClick={subtrair} className="menosItem">-</button>
                     <span className="valorQuantidade">{quantidadeDinamica}</span>
                     <button onClick={adicionar} className="maisItem">+</button>
+                    
+
             </div>
 
             <div className="divBotaoRemover">
                     <button onClick={onClickR} className="botaoRemover"><img className="removeButton" src={Icone} alt="botao que remove produtos" /></button>
             </div>
     
-
+            
 
         </div>
+
+      
             
    )
 }

@@ -53,11 +53,13 @@ function ListaDeCompras(){
 
 
     function primeiraMaiuscula(str) {
+
         return str.replace(/\w\S*/g, (txt) => 
             txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
         );
     }
-    
+
+
 
 
     function marcou(index){
@@ -124,7 +126,7 @@ function ListaDeCompras(){
 
             </div>
             
-            <CampoTotal />
+            <CampoTotal somaTotal={300}/>
                 
         </div>
 
