@@ -4,12 +4,12 @@ import './CampoTotal.css';
 
 
 
-function CampoTotal(){  
+function CampoTotal({quantidadeTotal}){  
 
     return (
 
 <div className="footerTotal">
-                <span className="quantidade">Quantidade: {50}</span>
+                <span className="quantidade">Quantidade: {quantidadeTotal}</span>
                 <div className="divSubtotal">
                     <span className="subtotal">Subtotal:</span>
                     <span className="valorSubtotal">R$ 2.466,00</span>

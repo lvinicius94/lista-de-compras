@@ -7,13 +7,14 @@ import NotIcon from './assets/notIcon.png'
 
 function ListaDeCompras(){
 
+
     const listaArmazenada = localStorage.getItem('Lista');
 
     const [Titulo, setTitulo] = useState('Minha Lista de Compras');
     
     const [quantidadeItem, setquantidadeItem] = useState(1);
 
-
+    
 
     function subtrair(index){
         const listaAux = [...lista];
@@ -45,11 +46,14 @@ function ListaDeCompras(){
         localStorage.setItem('Titulo', Titulo);
     }, [Titulo]);
 
+    
 
     const [lista, setLista] = useState(listaArmazenada ? JSON.parse(listaArmazenada) : []);
     const [novoItem, setNovoItem] = useState("");
 
-    
+    const somaTotal = lista.reduce((acumulador, itemAtual) => {
+        return acumulador + itemAtual.quantidade;
+      }, 0);
 
 
     useEffect(()=>{
@@ -134,6 +138,8 @@ function ListaDeCompras(){
                     /*<p>Adicione os produtos para sua lista de compras</p> */
                     :
                     lista.map((item, index)=>(
+                    
+                    
                     <Item 
                     key={index}
 
@@ -147,14 +153,27 @@ function ListaDeCompras(){
                     onClick={()=>{marcou(index)}}
                     onClickR={()=>{removeu(index)}}
 
-                    />))                    
-                }   
+                     
+
+                    />))  
+                
+                    
+                                    
+                }  
 
             </div>
+
+
+            <CampoTotal
             
-            <CampoTotal somaTotal={300}/>
-                
+            quantidadeTotal = {somaTotal} 
+            
+            /> 
+            
+
         </div>
+
+
 
     )
 
