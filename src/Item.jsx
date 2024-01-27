@@ -3,22 +3,14 @@ import './Item.css';
 import Icone from './assets/removeIcon.png'
 
 
-function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR}){  
+function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, quantidadeFinal, onClickAdicionar, onClickSubtrair}){  
 
 
-    const [quantidadeDinamica, setquantidadeDinamica] = useState(1);
-
-    const adicionar = () => {
-        setquantidadeDinamica(valorAtual => valorAtual + 1);
-    };
-
-    const subtrair = () => {
-        setquantidadeDinamica(valorAtual => Math.max(valorAtual - 1, 1));
-    };
+    
 
 ///////////////////////////////////////////////////
 
-   
+  
 
 /////////////////////////////////////////////////////
 
@@ -60,9 +52,9 @@ function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR}){
             </div>
 
             <div className="quantidadeItem">
-                    <button onClick={subtrair} className="menosItem">-</button>
-                    <span className="valorQuantidade">{quantidadeDinamica}</span>
-                    <button onClick={adicionar} className="maisItem">+</button>
+                    <button onClick={onClickSubtrair} className="menosItem">-</button>
+                    <span className="valorQuantidade">{quantidadeFinal}</span>
+                    <button onClick={onClickAdicionar} className="maisItem">+</button>
                     
 
             </div>

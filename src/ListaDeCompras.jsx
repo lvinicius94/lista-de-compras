@@ -10,6 +10,27 @@ function ListaDeCompras(){
     const listaArmazenada = localStorage.getItem('Lista');
 
     const [Titulo, setTitulo] = useState('Minha Lista de Compras');
+    
+    const [quantidadeItem, setquantidadeItem] = useState(1);
+
+
+
+    function subtrair(index){
+        const listaAux = [...lista];
+        if(listaAux[index].quantidade>1){
+            listaAux[index].quantidade --;
+        }        
+
+        setLista(listaAux);
+    }
+
+    function adicionar(index){
+        const listaAux = [...lista];
+        listaAux[index].quantidade ++;
+
+        setLista(listaAux);
+    }
+    
 
     // Carrega o título salvo do Local Storage quando o componente é montado
     useEffect(() => {
@@ -28,7 +49,7 @@ function ListaDeCompras(){
     const [lista, setLista] = useState(listaArmazenada ? JSON.parse(listaArmazenada) : []);
     const [novoItem, setNovoItem] = useState("");
 
-
+    
 
 
     useEffect(()=>{
@@ -46,7 +67,7 @@ function ListaDeCompras(){
 
 
 
-        setLista([{text: novoItem, foiMarcado: false}, ...lista])
+        setLista([{text: novoItem, foiMarcado: false, quantidade: quantidadeItem}, ...lista])
         setNovoItem("");
         /*document.getElementById('input-entrada').focus(); */
     }
@@ -96,7 +117,7 @@ function ListaDeCompras(){
                 value={novoItem}
                 onChange={(e)=>{setNovoItem(e.target.value)}}
 
-                    placeholder="Farinha de Trigo..."
+                    placeholder="Digite um produto..."
                 />
                 <button className="botaoAdicionar" type="submit">+</button>
             </form>
@@ -115,6 +136,11 @@ function ListaDeCompras(){
                     lista.map((item, index)=>(
                     <Item 
                     key={index}
+
+                    quantidadeFinal = {item.quantidade}
+                    onClickAdicionar={()=>{adicionar(index)}}        
+                    onClickSubtrair={()=>{subtrair(index)}}     
+
                     imagemIcone = {item.foiMarcado ? YesIcon : NotIcon}
                     corProduto = {item.foiMarcado ? marcado : desmarcado}
                     textoproduto ={primeiraMaiuscula(item.text)}
