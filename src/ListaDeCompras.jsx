@@ -99,7 +99,7 @@ function ListaDeCompras(){
     }
 
     function removeu(index){
-            const confirmacao = window.confirm("Tem certeza que deseja realizar esta ação?");
+            const confirmacao = window.confirm("Remover Item? A ação não poderá ser desfeita.");
         
             if (confirmacao) {
                 const listaAux = [...lista];
