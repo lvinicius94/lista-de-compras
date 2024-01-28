@@ -4,6 +4,8 @@ import Item from './Item'
 import CampoTotal from './CampoTotal'
 import YesIcon from './assets/yesIcon.png'
 import NotIcon from './assets/notIcon.png'
+import BotaoConfirmar from './BotaoConfirmar'
+
 
 function ListaDeCompras(){
 
@@ -97,9 +99,19 @@ function ListaDeCompras(){
     }
 
     function removeu(index){
-        const listaAux = [...lista];
-        listaAux.splice(index,1);
-        setLista(listaAux);
+            const confirmacao = window.confirm("Tem certeza que deseja realizar esta ação?");
+        
+            if (confirmacao) {
+                const listaAux = [...lista];
+                listaAux.splice(index,1);
+                setLista(listaAux);
+              console.log("Ação confirmada!");
+            } else {
+              // Coloque aqui a lógica para o que deve acontecer se o usuário cancelar
+              console.log("Ação cancelada!");
+            }
+
+        
     }
 
 
@@ -165,7 +177,7 @@ function ListaDeCompras(){
                 }  
 
             </div>
-
+       
 
             <CampoTotal
             
