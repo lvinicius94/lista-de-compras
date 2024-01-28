@@ -8,13 +8,11 @@ import NotIcon from './assets/notIcon.png'
 function ListaDeCompras(){
 
 
+
+
     const listaArmazenada = localStorage.getItem('Lista');
 
-    const [Titulo, setTitulo] = useState('Minha Lista de Compras');
-    
-    const [quantidadeItem, setquantidadeItem] = useState(1);
-
-    
+    const [Titulo, setTitulo] = useState('Minha Lista de Compras');       
 
     function subtrair(index){
         const listaAux = [...lista];
@@ -55,6 +53,10 @@ function ListaDeCompras(){
         return acumulador + itemAtual.quantidade;
       }, 0);
 
+    const somaValorTotal = lista.reduce((acumulador, itemAtual) => {
+        return acumulador + itemAtual.preco * itemAtual.quantidade;
+      }, 0);
+
 
     useEffect(()=>{
         localStorage.setItem('Lista', JSON.stringify(lista));        
@@ -71,7 +73,7 @@ function ListaDeCompras(){
 
 
 
-        setLista([{text: novoItem, foiMarcado: false, quantidade: quantidadeItem}, ...lista])
+        setLista([{text: novoItem, foiMarcado: false, quantidade: 1, preco:10}, ...lista])
         setNovoItem("");
         /*document.getElementById('input-entrada').focus(); */
     }
@@ -142,7 +144,8 @@ function ListaDeCompras(){
                     
                     <Item 
                     key={index}
-
+                    preco={item.preco}
+                    valorEmReal = {item.valorEmReal}        
                     quantidadeFinal = {item.quantidade}
                     onClickAdicionar={()=>{adicionar(index)}}        
                     onClickSubtrair={()=>{subtrair(index)}}     
@@ -166,7 +169,8 @@ function ListaDeCompras(){
 
             <CampoTotal
             
-            quantidadeTotal = {somaTotal} 
+            quantidadeTotal = {somaTotal}
+            somaSubTotal = {somaValorTotal} 
             
             /> 
             

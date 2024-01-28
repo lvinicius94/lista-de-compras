@@ -4,7 +4,14 @@ import './CampoTotal.css';
 
 
 
-function CampoTotal({quantidadeTotal}){  
+function CampoTotal({quantidadeTotal,somaSubTotal}){  
+
+    if (somaSubTotal) {
+        somaSubTotal = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+        }).format(somaSubTotal );
+    }
 
     return (
 
@@ -12,7 +19,7 @@ function CampoTotal({quantidadeTotal}){
                 <span className="quantidade">Quantidade: {quantidadeTotal}</span>
                 <div className="divSubtotal">
                     <span className="subtotal">Subtotal:</span>
-                    <span className="valorSubtotal">R$ 2.466,00</span>
+                    <span className="valorSubtotal">{somaSubTotal}</span>
                 </div>
 </div>
 

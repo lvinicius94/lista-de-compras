@@ -3,35 +3,16 @@ import './Item.css';
 import Icone from './assets/removeIcon.png'
 
 
-function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, quantidadeFinal, onClickAdicionar, onClickSubtrair}){  
+function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, quantidadeFinal, onClickAdicionar, onClickSubtrair, preco, onChange}){  
 
 
-    
 
-///////////////////////////////////////////////////
-
-  
-
-/////////////////////////////////////////////////////
-
-    const [preco, setPreco] = useState('R$ 0,00');
-
-    const handleChange = (event) => {
-        let deifnirPreco = event.target.value;
-
-        // Remove caracteres não numéricos
-        deifnirPreco = deifnirPreco.replace(/[^0-9]/g, '');
-
-        // Formata o valor como preço
-        if (deifnirPreco) {
-            deifnirPreco = new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-            }).format(deifnirPreco / 100);
-        }
-
-        setPreco(deifnirPreco);
-    };
+    if (preco) {
+        preco = new Intl.NumberFormat('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+        }).format(preco );
+    }
 
    return (
 
@@ -44,7 +25,7 @@ function Item({textoproduto, imagemIcone, onClick, corProduto, onClickR, quantid
                 className="precoItem" 
                 type="text" 
                 value={preco} 
-                onChange={handleChange} 
+                onChange={onChange}
                 pattern="[0-9]*"
                 inputMode="numeric"
                 />
